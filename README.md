@@ -27,12 +27,12 @@ For convenience to AI study, we unified all decision steps into a single "step" 
 
 The executor observation has shape of 93 by 34, and the oracle observation has shape of 111 by 34. The first dimension corresponds to 111 features (channels),  The second dimension of observation (with size 34)  corresponds to 34 Mahjong tiles (the order is Character 1-9, Dot 1-9,  Bamboo 1-9, East, South, West, North, White, Green, Red). 
 
-The value of any element in an observation is 1 or 0. See **observation_action_explanation.pdf** for details.
+The value of any element in an observation is 1 or 0. See [observation_action_explanation.pdf](https://github.com/pymahjong/pymahjong/blob/main/observation_action_explanation.pdf) for details.
 
 
 ## Action 
 
-We use 47 discrete actions to encode all possible decisions in a game. See **observation_action_explanation.pdf** for details.
+We use 47 discrete actions to encode all possible decisions in a game. See [observation_action_explanation.pdf](https://github.com/pymahjong/pymahjong/blob/main/observation_action_explanation.pdf) for details.
 
 
 
@@ -48,7 +48,7 @@ The loaded data is a Python dictionary contains the human demonstrations
 - data["X"] : executor observation
 - data["O"] : additional oracle observation (oracle observation is np.concatenate([data["X"], data["O"]], axis=-2))
 - data["A"] : Action selected
-- data["M"] : Valid actions (=1 means the corresponding is valid at that step)
+- data["M"] : Valid actions (=1 means the corresponding action is valid at that step)
 - data["R"] : Reward
 - data["D"] : Done signal
 - data["V"] : =0 if this step is the terminated step of an episode 
@@ -133,4 +133,4 @@ if env.has_done():  # Should use env.has_done() instead of done from step()!!
 ```
 where "env.get_payoffs()" returns a list of payoffs of the four players.
 
-See env_mahjong_example.py for a runnable instance.
+See [env_mahjong_example.py](https://github.com/pymahjong/pymahjong/blob/main/env_mahjong_example.py) for a runnable instance.

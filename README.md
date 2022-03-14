@@ -1,12 +1,22 @@
-# pymahjong
+# pymahjong (older version)
 
-pymahjong is a Python library for decision making artificial intelligence study on Japanese Riichi Mahjong (https://en.wikipedia.org/wiki/Japanese_Mahjong). 
+This is the reinforcement learning environment of Japanese Riichi Mahjong (https://en.wikipedia.org/wiki/Japanese_Mahjong), used in the research article "**Variational oracle guiding for reinforcement learning**" (https://openreview.net/forum?id=pjqqxepwoMy).
+
+**Authors**: Dongqi Han, Tadashi Kozuno, Xufang Luo, Zhao-Yun Chen, Kenji Doya, Yuqing Yang, Dongsheng Li
+
+## This version is deprecated.
+
+**Please switch to the newer version of this envrionment (https://github.com/Agony5757/mahjong), which is ~100x times faster (by re-implementing the computations in python by C++) and of which we fixed some known issues of this version.**
+
+
+-----------------------------------------------------------------------------------------------
+
+## Usage
 
 The environment is wrapped like a Gym environment (https://github.com/openai/gym), but it differs from a normal single-agent gym environment because Mahjong is a 4-players game with sophisticated state transitions. Please see below for detailed API.
 
-Currently pymahjong only supports Python 3.7 on Ubuntu 18.04 and Python 3.6 on Windows. We are working on supporting other versions.
+This environment only supports Python 3.7 on Ubuntu 18.04 and Python 3.6 on Windows. 
 
-**This environment is with Paper135 submitted to ICLR2022.**
 
 
 ## Decision flow
@@ -38,7 +48,7 @@ We use 47 discrete actions to encode all possible decisions in a game. See [obse
 
 ## Dataset for offline reinforcement learning / imitation learning
 
-Please downloaded from the anonymous link: https://drive.google.com/drive/folders/19v6bpG_9nfKgSGVscbQ6efaJP1fFoPpo?usp=sharing
+Please downloaded from: https://drive.google.com/drive/folders/19v6bpG_9nfKgSGVscbQ6efaJP1fFoPpo?usp=sharing
 
 The data after unzipping are in .mat format, which can be loaded in Python using scipy
 ```
@@ -134,3 +144,15 @@ if env.has_done():  # Should use env.has_done() instead of done from step()!!
 where "env.get_payoffs()" returns a list of payoffs of the four players.
 
 See [env_mahjong_example.py](https://github.com/pymahjong/pymahjong/blob/main/env_mahjong_example.py) for a runnable instance.
+
+## Citation
+```
+@inproceedings{
+han2022variational,
+title={Variational oracle guiding for reinforcement learning},
+author={Dongqi Han and Tadashi Kozuno and Xufang Luo and Zhao-Yun Chen and Kenji Doya and Yuqing Yang and Dongsheng Li},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=pjqqxepwoMy}
+}
+```

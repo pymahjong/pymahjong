@@ -48,7 +48,7 @@ We use 47 discrete actions to encode all possible decisions in a game. See [obse
 
 ## Dataset for offline reinforcement learning / imitation learning
 
-Please downloaded from: https://drive.google.com/drive/folders/19v6bpG_9nfKgSGVscbQ6efaJP1fFoPpo?usp=sharing
+Please downloaded from: https://1drv.ms/u/s!AuxZyB8UeEtsgpNPCHlPEtWh75By7Q?e=lOkARM
 
 The data after unzipping are in .mat format, which can be loaded in Python using scipy
 ```
